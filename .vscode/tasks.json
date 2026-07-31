@@ -10,7 +10,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}\\app.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -22,7 +22,14 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "Replaces gcc task with g++ so C++ files link libstdc++."
+            "detail": "Build the active C++ file to app.exe in the workspace folder."
+        },
+        {
+            "label": "Run app.exe",
+            "type": "shell",
+            "command": "${fileDirname}\\app.exe",
+            "dependsOn": "C/C++: g++.exe build active file",
+            "problemMatcher": []
         }
     ]
 }
