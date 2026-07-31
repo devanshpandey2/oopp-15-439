@@ -1,6 +1,7 @@
 *
 **/*
 x.exe
+app.exe
 # whilelist files with extensions and source code files
 !*.*
 !**/*.*
