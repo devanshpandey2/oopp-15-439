@@ -35,7 +35,7 @@ int main()
     int x,y;
     cout<<"enter value of x and y"<<endl;
     cin>>x>>y;
-    
+    // 
     cout<<"Swapping by value"<<endl;
     cout<<"Value Before swap :"<<endl;
     show(x,y);
