@@ -22,7 +22,7 @@ void swapByAddress(int *x,int *y)
     *y=z;
 }
 
-void swapByRef(int &x,int &y)
+void swapByReference(int &x,int &y)
 {
     int z=x;
     x=y;
@@ -55,7 +55,7 @@ int main()
     cout<<"Swap by reference"<<endl;
     cout<<"Value Before swap :"<<endl;
     show(x,y);
-    swapByRef(x,y);
+    swapByReference(x,y);
     cout<<"Value After swap :"<<endl;
     show(x,y);
 
