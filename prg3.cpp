@@ -1,28 +1,40 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-int inline input(){
-    int x;
-    cin>>x;
-    return x;
+
+inline int add(int a, int b)
+{
+    return a + b;
 }
-int add(int x,int y){
-    return x+y;
+
+int multiply(int a, int b = 2)
+{
+    return a * b;
 }
-int defaultArg(int x,int y=10){
-    return x+y;
+
+int subtract(int a, int b)
+{
+    return a - b;
 }
-int fnoverloading(int x,int y){
-    return x+y;
+
+double subtract(double a, double b)
+{
+    return a - b;
 }
-double fnoverloading(double x,double y){
-    return x+y;
-}
-int main (){
-    int a = input();
-    int b = input();
-    cout<<add(a,b)<<endl;
-    cout<<defaultArg(a)<<endl;
-    cout<<fnoverloading(a,b)<<endl;
-    cout<<fnoverloading(1.2,3.4)<<endl;
+
+int main()
+{
+    int x, y;
+
+    cout << "Enter two integers: ";
+    cin >> x >> y;
+
+    cout << "Addition (Inline Function): " << add(x, y) << endl;
+
+    cout << "Multiplication (Default Argument): " << multiply(x) << endl;
+    cout << "Multiplication (With Two Arguments): " << multiply(x, y) << endl;
+
+    cout << "Subtraction (Integer): " << subtract(x, y) << endl;
+    cout << "Subtraction (Double): " << subtract(10.5, 4.2) << endl;
+
     return 0;
 }
