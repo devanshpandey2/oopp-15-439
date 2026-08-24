@@ -1,52 +1,59 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-class BankAccount {
+class BankAccount
+{
 private:
-    int accountNo;
-    float balance;
+    int accountNumber;
+    string accountHolder;
+    double balance;
 
 public:
-    void setData() {
-        cout << "Enter Account Number: ";
-        cin >> accountNo;
-
-        cout << "Enter Initial Balance: ";
-        cin >> balance;
+    BankAccount(int accNo, string name, double bal)
+    {
+        accountNumber = accNo;
+        accountHolder = name;
+        balance = bal;
     }
 
-    void deposit(float amount) {
-        balance = balance + amount;
+    void deposit(double amount)
+    {
+        balance += amount;
+        cout << "Deposited Amount: " << amount << endl;
     }
 
-    void withdraw(float amount) {
+    void withdraw(double amount)
+    {
         if (amount <= balance)
-            balance = balance - amount;
+        {
+            balance -= amount;
+            cout << "Withdrawn Amount: " << amount << endl;
+        }
         else
-            cout << "Insufficient Balance!" << endl;
+        {
+            cout << "Insufficient Balance" << endl;
+        }
     }
 
-    void display() {
-        cout << "\nAccount Number: " << accountNo << endl;
-        cout << "Balance: " << balance << endl;
+    void display()
+    {
+        cout << "\nAccount Number: " << accountNumber << endl;
+        cout << "Account Holder: " << accountHolder << endl;
+        cout << "Current Balance: " << balance << endl;
     }
 };
 
-int main() {
-    BankAccount b;
-    float amount;
+int main()
+{
+    BankAccount account(101, "lucy", 5000);
 
-    b.setData();
+    account.display();
 
-    cout << "Enter deposit amount: ";
-    cin >> amount;
-    b.deposit(amount);
+    account.deposit(2000);
 
-    cout << "Enter withdrawal amount: ";
-    cin >> amount;
-    b.withdraw(amount);
+    account.withdraw(1500);
 
-    b.display();
+    account.display();
 
     return 0;
 }

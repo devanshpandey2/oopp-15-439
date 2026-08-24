@@ -1,60 +1,48 @@
 #include <iostream>
 using namespace std;
 
-class Student {
+class Laptop {
 private:
-    int roll;
-    string name;
+    string brand;
+    int ram;
 
 public:
-    // Default Constructor
-    Student() {
-        roll = 0;
-        name = "Unknown";
-        cout << "Default Constructor Called" << endl;
+    Laptop() {
+        brand = "Unknown";
+        ram = 0;
+        cout << "Default Constructor Called\n";
     }
 
-    // Parameterized Constructor
-    Student(int r, string n) {
-        roll = r;
-        name = n;
-        cout << "Parameterized Constructor Called" << endl;
+    Laptop(string b, int r) {
+        brand = b;
+        ram = r;
+        cout << "Parameterized Constructor Called\n";
     }
 
-    // Copy Constructor
-    Student(const Student &s) {
-        roll = s.roll;
-        name = s.name;
-        cout << "Copy Constructor Called" << endl;
+    Laptop(const Laptop &l) {
+        brand = l.brand;
+        ram = l.ram;
+        cout << "Copy Constructor Called\n";
     }
 
-    // Display function
     void display() {
-        cout << "Roll: " << roll << endl;
-        cout << "Name: " << name << endl;
+        cout << "Brand: " << brand
+             << "\nRAM: " << ram << " GB\n";
     }
 
-    // Destructor
-    ~Student() {
-        cout << "Destructor Called for " << name << endl;
+    ~Laptop() {
+        cout << "Destructor Called for " << brand << endl;
     }
 };
 
 int main() {
+    Laptop l1;
+    Laptop l2("Dell", 16);
+    Laptop l3 = l2;
 
-    cout << "Creating Student 1:" << endl;
-    Student s1;
-    s1.display();
-
-    cout << "\nCreating Student 2:" << endl;
-    Student s2(101, "Rahul");
-    s2.display();
-
-    cout << "\nCreating Student 3 using copy constructor:" << endl;
-    Student s3 = s2;
-    s3.display();
-
-    cout << "\nEnd of program..." << endl;
+    l1.display();
+    l2.display();
+    l3.display();
 
     return 0;
 }
