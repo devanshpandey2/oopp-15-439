@@ -1,64 +1,54 @@
-#include<iostream>
-
+#include <iostream>
 using namespace std;
 
-void show(int x,int y)
+void swapByValue(int x, int y)
 {
-    cout<<"x="<<x<<" y="<<y<<endl;
+    int temp = x;
+    x = y;
+    y = temp;
 }
 
-void swapByVal(int x,int y)
+void swapByAddress(int *x, int *y)
 {
-    int z=x;
-    x=y;
-    y=z;
-    
+    int temp = *x;
+    *x = *y;
+    *y = temp;
 }
 
-void swapByAddress(int *x,int *y)
+void swapByReference(int &x, int &y)
 {
-    int z=*x;
-    *x=*y;
-    *y=z;
-}
-
-void swapByRef(int &x,int &y)
-{
-    int z=x;
-    x=y;
-    y=z;
+    int temp = x;
+    x = y;
+    y = temp;
 }
 
 int main()
 {
+    int x, y;
 
-    int x,y;
-    cout<<"enter value of x and y"<<endl;
-    cin>>x>>y;
-    // 
-    cout<<"Swapping by value"<<endl;
-    cout<<"Value Before swap :"<<endl;
-    show(x,y);
-    swapByVal(x,y);
-    cout<<"Value After swap :"<<endl;
-    show(x,y);
+    cout << "Enter value of x,y: ";
+    cin >> x >> y;
 
+    cout << "\nSwapping by Value\n";
+    cout << "Value before swap\n";
+    cout << "x:" << x << ", y:" << y << endl;
+    swapByValue(x, y);
+    cout << "Value after swap\n";
+    cout << "x:" << x << ", y:" << y << endl;
 
-    cout<<"Swap by address"<<endl;
-    cout<<"Value Before swap :"<<endl;
-    show(x,y);
-    swapByAddress(&x,&y);
-    cout<<"Value After swap :"<<endl;
-    show(x,y);
+    cout << "\n\nSwapping by Address\n";
+    cout << "Value before swap\n";
+    cout << "x:" << x << ", y:" << y << endl;
+    swapByAddress(&x, &y);
+    cout << "Value after swap\n";
+    cout << "x:" << x << ", y:" << y << endl;
 
-
-    cout<<"Swap by reference"<<endl;
-    cout<<"Value Before swap :"<<endl;
-    show(x,y);
-    swapByRef(x,y);
-    cout<<"Value After swap :"<<endl;
-    show(x,y);
-
+    cout << "\n\nSwapping by Reference\n";
+    cout << "Value before swap\n";
+    cout << "x:" << x << ", y:" << y << endl;
+    swapByReference(x, y);
+    cout << "Value after swap\n";
+    cout << "x:" << x << ", y:" << y << endl;
 
     return 0;
 }

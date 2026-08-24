@@ -1,61 +1,69 @@
-#include <iostream>
-#include <string>
+#include<iostream>
 using namespace std;
 
-class Student {
-private:
-    int rollNo;
-    string name;
-    float marks;
+class Student
+{
+    string name, branch, section;
+    int roll, marks[5], total;
+    float percent;
 
 public:
-    // Function to input student details
-    void input() {
-        cout << "Enter Roll Number: ";
-        cin >> rollNo;
+    void input()
+    {
+        cout<<"Enter name:";
+        cin>>name;
 
-        cin.ignore();
-        cout << "Enter Name: ";
-        getline(cin, name);
+        cout<<"Enter Branch:";
+        cin>>branch;
 
-        cout << "Enter Marks: ";
-        cin >> marks;
+        cout<<"Enter section:";
+        cin>>section;
+
+        cout<<"Enter Roll no:";
+        cin>>roll;
+
+        for(int i=0;i<5;i++)
+        {
+            cout<<"Enter marks of "<<i+1<<":";
+            cin>>marks[i];
+        }
     }
 
-    // Function to display student details
-    void display() {
-        cout << "\nStudent Details\n";
-        cout << "Roll Number : " << rollNo << endl;
-        cout << "Name        : " << name << endl;
-        cout << "Marks       : " << marks << endl;
+    void cal()
+    {
+        total = 0;
+        for(int i=0;i<5;i++)
+        {
+            total += marks[i];
+        }
+        percent = total / 5.0;
+    }
 
-        if (marks >= 40)
-            cout << "Result      : Pass" << endl;
-        else
-            cout << "Result      : Fail" << endl;
+    void show()
+    {
+        cout<<"\nName: "<<name;
+        cout<<"\nBranch: "<<branch;
+        cout<<"\nSection: "<<section;
+        cout<<"\nRoll No: "<<roll;
+
+        cout<<"\nMarks: ";
+        for(int i=0;i<5;i++)
+        {
+            cout<<marks[i]<<" ";
+        }
+
+        cout<<"\nTotal Marks: "<<total;
+        cout<<"\nPercentage: "<<percent<<"%";
     }
 };
 
-int main() {
-    int n;
+int main()
+{
+    Student s;
 
-    cout << "Enter number of students: ";
-    cin >> n;
-
-    Student students[n];
-
-    // Input details
-    for (int i = 0; i < n; i++) {
-        cout << "\nEnter details of Student " << i + 1 << ":\n";
-        students[i].input();
-    }
-
-    // Display details
-    cout << "\n===== STUDENT RECORDS =====\n";
-
-    for (int i = 0; i < n; i++) {
-        students[i].display();
-    }
+    s.input();
+    s.cal();
+    s.show();
 
     return 0;
 }
