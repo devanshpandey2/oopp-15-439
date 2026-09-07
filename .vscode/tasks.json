@@ -10,10 +10,10 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\app.exe"
+                "${workspaceFolder}\\app.exe"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
                 "$gcc"
@@ -27,7 +27,7 @@
         {
             "label": "Run app.exe",
             "type": "shell",
-            "command": "${fileDirname}\\app.exe",
+            "command": "${workspaceFolder}\\app.exe",
             "dependsOn": "C/C++: g++.exe build active file",
             "problemMatcher": []
         }

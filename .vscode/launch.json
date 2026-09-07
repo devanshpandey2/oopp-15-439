@@ -8,8 +8,9 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Devansh Pandey/OneDrive/Desktop/oopp_15_439",
-      "program": "c:/Users/Devansh Pandey/OneDrive/Desktop/oopp_15_439/build/Debug/outDebug",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}\\app.exe",
+      "preLaunchTask": "C/C++: g++.exe build active file",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
