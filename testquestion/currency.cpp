@@ -10,7 +10,7 @@ public:
     
     Currency(float amount) {
         rupees = (int)amount;
-        paise = (int)((amount - rupees) * 100 + 0.5);
+        paise = (int)((amount - rupees) * 100 + 0.5 );
     }
 
     
@@ -25,7 +25,7 @@ public:
 };
 
 int main() {
-    float amount = 125.75f;
+    float amount = 145.59f;
 
     
     Currency c = amount;
